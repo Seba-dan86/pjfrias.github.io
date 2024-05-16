@@ -1,0 +1,124 @@
+/* colores y fuentes */
+:root{
+    --p-color1: #fff;
+    --color2:#000;
+    --font-size1: 40px;
+    --font-size:25px;
+    }
+
+
+
+
+/* Al body le sacamos los estilos del navegador con el padding , margin y el box-sizing
+ *con un BG que cubra toda la pantalla , que no se repita y que este fijo al scroll
+*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../assets/img1.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header{
+    backdrop-filter: blur(20px);
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #fff;
+}
+
+header ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 40px;
+    }
+
+header h2{
+    margin: 40px;
+}
+
+header a{
+    text-decoration: none;
+    color:var(--p-color1);
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    border: 4px solid #332609d7;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+header ul li a:hover {
+color: var(--color2);
+background: #5c571a8f;
+
+}
+
+header ul li {
+    list-style: none;
+    align-items: center;
+    width: 200px;
+    color: var(--p-color1);
+    font-size: var(--font-size);
+    height: 80px;
+    flex: 1 0 200px;
+}
+/*  */
+header a{
+
+    text-decoration: none;
+    color:var(--p-color1);
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+/*  */
+.productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 70px;
+}
+.productos{
+    width: 50%;
+}
+
+*{
+    text-shadow: 2px 2px 4px #000;
+}
+
+
+
+
+
+/* css definitivo */
+p{
+    background: transparent;
+    color: var(--p-color1);
+    font-size: var(--font-size);
+}
+h3{
+    color: var(--p-color1);
+    font-size: var(--font-size1);
+}
+
+.lista{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin-left: 70px;
+    padding-bottom: 10px;
+    padding-bottom: 5px;
+    color: var(--p-color1);
+    font-size: var(--font-size);
+}

@@ -1,0 +1,137 @@
+
+:root{
+    --p-color1: #664e4e;
+    --color2:#000;
+    --font-size1: 40px;
+    --font-size:25px;
+    --font-size2:17px;
+    }
+
+
+
+body{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+    background-image: url(../assets/lubricantes-autos-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+header{
+    width: 100%;
+    height: 100px;
+}
+.formulario{
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:500px;
+    height: 600px;
+    border: 2px solid var(--p-color1);
+    margin: auto;
+    border-radius: 20px;
+
+}
+.formulario h2{
+
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color:var(--p-color1);
+    font-size: var(--font-size1);
+
+}
+.formulario label{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    color:var(--p-color1);
+    font-weight: bold;
+    margin-top:10px ;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.formulario input{
+    width: 80%;
+    height: 5%;
+    text-align: center;
+    background: transparent;
+    color:var(--p-color1);
+    border: 2px solid var(--p-color1);
+    border-radius: 20px;
+}
+.formulario button{
+    width: 80%;
+    height: 7%;
+    text-align: center;
+    border: 2px solid var(--p-color1);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #664e4e;
+    border-radius: fill;
+    border-color: black;
+}
+.formulario a{
+
+
+    text-decoration: none;
+    color:var(--p-color2);
+    background-color: #664e4e;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.formulario select{
+    background-color: darkgoldenrod;
+}
+
+.datosForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+margin: auto;
+width: 500px;
+height: 400px;
+background:white;
+border: 2px solid #664e4e;
+border-radius: 20px;
+align-items: center;
+}
+
+.datosForm p{
+    width: 100%;
+    height: 10px;
+    text-align: center;
+    color:var(--p-color1);
+    font-size: var(--font-size2);
+}
+
+.datosForm button{
+    width: 60%;
+    height: 30px;
+    text-align: center;
+    border: 2px solid var(--p-color1);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #664e4e;
+    border-radius: fill;
+    border-color: black;
+}
