@@ -30,6 +30,7 @@ body{
     padding: 10px;
     height: 90vh;
     background-attachment: fixed;
+    height: 80%;
 }
 
 
@@ -45,12 +46,6 @@ border-radius: 25px;
 background: transparent;
 backdrop-filter: blur(10px);
 }
-/* .lubricante button{
-    width: 100%;
-    border-radius: 25px;
-    padding: 10px;
-
-} */
 
 
 
@@ -65,39 +60,8 @@ font-weight: bold;
 
 
 }
-footer{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px;
-    width: 100vw;
-    height: 250px;
 
-}
-footer a{
-    margin: 20px;
-}
-footer img:hover{
 
-    transform: translateY(-10px);
-    transition: .3s ;
-}
-.slider{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 70vh;
-    backdrop-filter: blur(15px);
-}
-.slider button{
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
 
 /* al header que tiene la barra de navegacion le ponemos un fondo borroso y un ancho de todo el viewport */
 header{
@@ -143,4 +107,26 @@ header ul li {
     font-size: var(--font-size);
     height: 80px;
     flex: 1 0 200px;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+        width: 100%;
+        height: 40%;
+backdrop-filter: blur(10px);
+
+
+}
+
+footer a{
+    margin: 20px;
+}
+
+footer img:hover{
+
+    transform: translateY(-10px);
+    transition: .3s ;
 }
