@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../css/formulario.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +11,25 @@
   <body>
     <header></header>
     <div class="principal">
-      <form >
+      <form   >
         <div class="formulario">
           <h2>Formulario de Contacto</h2>
 
           <label for="nombre" >Nombre</label>
-          <input type="text" id="nombre" name="nombre" />
-
+          <input type="text" id="nombre" name="nombre" class="inputV"  />
+          
+          
           <label for="apellido">apellido</label>
           <input type="text" id="apellido" name="apellido"/>
+         
 
           <label for="email">email</label>
           <input type="email" id="email" name="email" />
+          
 
           <label for="telefono">telefono</label>
           <input type="text" name="telefono" id="telefono" />
+          
 
           <label for="service">Elija una Opcion</label>
           <select name="service" id="service" name="service">

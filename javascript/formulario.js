@@ -5,7 +5,7 @@
 const btn=document.getElementById('btn');
 
 /* HAY QUE VALIDAR LOS DATOS INGRESADOS */
-
+const img = document.querySelector('.msgError');
 const nombre=document.getElementById('nombre');
 const apellido=document.getElementById('apellido');
 const email=document.getElementById('email');
@@ -14,70 +14,85 @@ const select=document.getElementById('service');
 const padre=document.getElementById('datos');
 const data=nombre.value + " " + apellido.value + " " + email.value + " " + telefono.value + " "+ select.value;
 
-console.log(data);
+
 
 btn.addEventListener("click", function (e) {
 
     if (validar()){
         mostrarTicket();
+        nombre.style.borderColor='black';
+    apellido.style.borderColor='black';
+    email.style.borderColor='black';
+    telefono.style.borderColor='black';
         btn.disabled = true;
         nombre.disabled = true;
         apellido.disabled = true;
         email.disabled = true;
         telefono.disabled = true;
+        
     }else{
         mostrarError();
     }
-
-    
-
 });
 
+
 function validar(){
-    if(nombre.value==""||apellido.value==""||email.value==""||telefono.value==""||select.value ==""){
-        alert("Debe ingresar todos los datos");
-        return false;
+    if(nombre.value==''||apellido.value==''||email.value==''||telefono.value==''||select.value ==''){
+      nombre.style.borderColor='red';
+      apellido.style.borderColor='red';
+      email.style.borderColor='red';
+      telefono.style.borderColor='red';
+      nombre.placeholder='debe ingresar algun dato';
+      apellido.placeholder='debe ingresar algun dato';
+      email.placeholder='debe ingresar algun dato';
+      telefono.placeholder='debe ingresar algun dato';
+         return false;
     }
     /* REGEX*/
     let validarNombre= /^[a-zA-Z\W]{1,20}$/;
     let validarApellido= /^[a-zA-Z\W]{1,20}$/;
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let validarTelefono=/^\d{1,15}$/;
+    let validarTelefono=/^\d{1,10}$/;
 
+   
     
-    if (validarNombre.test(nombre.value)) {
-        console.log("El nombre es válido.");
+    
+    if ( validarNombre.test(nombre.value)) {
+        nombre.style.borderColor='green';
+       
+
     } else {
-        console.log("El nombre no es válido.");
-        nombre.style.borderColor = "red";
+        
         return false;
     }
 
     if (validarApellido.test(apellido.value)) {
-        console.log("El apellido es válido.");
+        apellido.style.borderColor='green';
     } else {
-        console.log("El apellido no es válido.");
-        apellido.style.borderColor = "red";
+        
+        
         return false;
     }
 
     if (emailPattern.test(email.value)) {
-        console.log("El correo electrónico es válido.");
-    } else {
+        email.style.borderColor='green';
+        } else {
         console.log("El correo electrónico no es válido.");
-        email.style.borderColor = "red";
+        
         return false;
     }
 
     if(validarTelefono.test(telefono.value)) {
-        console.log("El teléfono es válido");
+        telefono.style.borderColor='green';
     }else{
-        console.log("El teléfono no es válido");
-        telefono.style.borderColor = "red";
+        
         return false;
     }
     return true;
 }
+
+
+
 
 function mostrarTicket(){
     
@@ -116,9 +131,17 @@ function mostrarTicket(){
     pie.setAttribute('class','datosTexto');
     pie.innerHTML='Gracias por elegirnos ! En breve nos contactaremos para su cita';
 
-    let aceptar= document.createElement("button");
+    let aceptar= document.createElement("a");
     padre.appendChild(aceptar);
-    aceptar.innerText='aceptar';
+    aceptar.innerText='Descargar Comprobante';
+   
+    aceptar.setAttribute('download','comprobante.pdf');
+    aceptar.setAttribute('href','../html.comprobante.html');
+   
+
+    
+
+
 
     aceptar.addEventListener("click", function (e) {
     nombre.disabled=false;
@@ -142,14 +165,30 @@ function mostrarTicket(){
     padre.removeChild(infoServicio);
     padre.removeChild(pie);
     });
+    
+    
 }
 
 function mostrarError(){
+    if(!nombre){
+        nombre.appendChild(msgError());
+    }
     let padre=document.getElementById('datos');
     padre.style.visibility="visible";
     let error=document.createElement('p');
     padre.appendChild(error);
     error.setAttribute('class','datosTexto');
     error.innerHTML='Error ! Verifique los datos ingresados';
-    btn.disabled = fasle;
+    btn.disabled = false;
 }
+function createPdf(){
+let texto= nombre.value + apellido.value+email.value+service.value+telefono.value;
+    let documento= new jsPdf();
+    
+    documento.text(10,10,texto);
+    
+    documento.save("comprobante.pdf");
+    
+    }
+
+

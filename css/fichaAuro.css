@@ -129,8 +129,8 @@ footer{
     align-items: center;
     padding: 10px;
         width: 100vw;
-        height: 40%;
-        backdrop-filter: blur(10px);
+        height: 30%;
+       
     
     }
     footer a{
