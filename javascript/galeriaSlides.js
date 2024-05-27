@@ -1,5 +1,5 @@
 const imagenes=["../assets/slide1.jpg", "../assets/slide2.jpg", "../assets/slide3.jpg",
-"../assets/slide4.jpg", "../assets/slide5.jpg", "../assets/slide6.webp", "../assets/slide7.jpg", "../assets/slides8.jpg", "../assets/slides9.jpg","../assets/slides10.jpg"];
+"../assets/slide4.jpg", "../assets/slide5.jpg", "../assets/slide6.webp", "../assets/slide7.jpg", "../assets/slide8.jpg", "../assets/slide9.jpg","../assets/slide10.jpg"];
 
 document.Imagen.src=imagenes[0];
 let contador=0;
