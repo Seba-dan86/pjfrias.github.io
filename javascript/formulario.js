@@ -29,7 +29,7 @@ btn.addEventListener("click", function (e) {
         apellido.disabled = true;
         email.disabled = true;
         telefono.disabled = true;
-        
+
     }else{
         mostrarError();
     }
@@ -42,10 +42,10 @@ function validar(){
       apellido.style.borderColor='red';
       email.style.borderColor='red';
       telefono.style.borderColor='red';
-      nombre.placeholder='debe ingresar algun dato';
-      apellido.placeholder='debe ingresar algun dato';
-      email.placeholder='debe ingresar algun dato';
-      telefono.placeholder='debe ingresar algun dato';
+      nombre.placeholder='Debe ingresar un nombre';
+      apellido.placeholder='Debe ingresar un apellido';
+      email.placeholder='Debe ingresar un email valido';
+      telefono.placeholder='Debe ingresar numero de telefono';
          return false;
     }
     /* REGEX*/
@@ -54,38 +54,38 @@ function validar(){
     let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let validarTelefono=/^\d{1,10}$/;
 
-   
-    
-    
+
+
+
     if ( validarNombre.test(nombre.value)) {
         nombre.style.borderColor='green';
-       
+
 
     } else {
-        
+
         return false;
     }
 
     if (validarApellido.test(apellido.value)) {
         apellido.style.borderColor='green';
     } else {
-        
-        
+
+
         return false;
     }
 
     if (emailPattern.test(email.value)) {
         email.style.borderColor='green';
         } else {
-        console.log("El correo electrónico no es válido.");
-        
+
+
         return false;
     }
 
     if(validarTelefono.test(telefono.value)) {
         telefono.style.borderColor='green';
     }else{
-        
+
         return false;
     }
     return true;
@@ -95,7 +95,7 @@ function validar(){
 
 
 function mostrarTicket(){
-    
+
     padre.style.visibility="visible";
     let encabezado=document.createElement('p');
     padre.appendChild(encabezado);
@@ -134,12 +134,12 @@ function mostrarTicket(){
     let aceptar= document.createElement("a");
     padre.appendChild(aceptar);
     aceptar.innerText='Descargar Comprobante';
-   
-    aceptar.setAttribute('download','comprobante.pdf');
-    aceptar.setAttribute('href','../html.comprobante.html');
-   
 
-    
+    aceptar.setAttribute('download','comprobante.pdf');
+    aceptar.setAttribute('href','../html/comprobante.html');
+
+
+
 
 
 
@@ -153,8 +153,8 @@ function mostrarTicket(){
     apellido.value='';
     email.value='';
     telefono.value='';
-    
-    padre.style.visibility="hidden";  
+
+    padre.style.visibility="hidden";
     padre.removeChild(encabezado);
     padre.removeChild(aceptar);
     padre.removeChild(br);
@@ -165,8 +165,8 @@ function mostrarTicket(){
     padre.removeChild(infoServicio);
     padre.removeChild(pie);
     });
-    
-    
+
+
 }
 
 function mostrarError(){
@@ -184,11 +184,11 @@ function mostrarError(){
 function createPdf(){
 let texto= nombre.value + apellido.value+email.value+service.value+telefono.value;
     let documento= new jsPdf();
-    
+
     documento.text(10,10,texto);
-    
+
     documento.save("comprobante.pdf");
-    
+
     }
 
 
