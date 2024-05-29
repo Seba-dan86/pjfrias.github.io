@@ -138,4 +138,18 @@ padding-top: 50px;
     border-color: black;
 
 }
+.datosForm button{
+    width: 60%;
+    height: 40px;
+    text-align: center;
+    border: 2px solid var(--p-color1);
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #664e4e;
+    border-radius: fill;
+    border-color: black;
+}
 
