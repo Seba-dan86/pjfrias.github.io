@@ -135,7 +135,7 @@ function mostrarTicket(){
     padre.appendChild(aceptar);
     aceptar.innerText='Descargar Comprobante';
 
-    aceptar.setAttribute('download','comprobante.pdf');
+    aceptar.setAttribute('download');
     aceptar.setAttribute('href','../html/comprobante.html');
 
 
@@ -181,14 +181,6 @@ function mostrarError(){
     error.innerHTML='Error ! Verifique los datos ingresados';
     btn.disabled = false;
 }
-function createPdf(){
-let texto= nombre.value + apellido.value+email.value+service.value+telefono.value;
-    let documento= new jsPdf();
 
-    documento.text(10,10,texto);
-
-    documento.save("comprobante.pdf");
-
-    }
 
 
