@@ -21,7 +21,7 @@ btn.addEventListener("click", function (e) {
 
     if (validar()){
         mostrarTicket();
-        let data= nombre.value +apellido.value +email.value +telefono.value +select.value ;
+
 
         nombre.style.borderColor='black';
         apellido.style.borderColor='black';
@@ -144,12 +144,12 @@ function mostrarTicket(){
     padre.appendChild(aceptar);
     aceptar.innerText='Aceptar';
 
-    let ancla= document.createElement('a');
-    padre.appendChild(ancla);
-    ancla.innerText='Descargar Comprobante';
+    // let ancla= document.createElement('a');
+    // padre.appendChild(ancla);
+    // ancla.innerText='Descargar Comprobante';
 
 
-    ancla.setAttribute('href','../html/comprobante.html');
+    // ancla.setAttribute('href','../html/comprobante.html');
 
 
 
@@ -177,6 +177,12 @@ function mostrarTicket(){
         padre.removeChild(infoTelefono);
         padre.removeChild(infoServicio);
         padre.removeChild(pie);
+        nombre.value='';
+        apellido.value='';
+        telefono.value='';
+        email.value='';
+
+
     });
 
 
@@ -196,4 +202,3 @@ function mostrarError(){
 }
 
 
-export {data} ;
